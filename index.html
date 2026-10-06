@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Journify — Jurnal Harian</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span>✦</span> Journify
+        </div>
+
+        <nav>
+            <a href="#" class="active">Jurnal</a>
+            <a href="#about">Tentang</a>
+        </nav>
+
+        <button class="profile-btn">👤</button>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div>
+
+                <p class="small-title">
+                    MY PERSONAL JOURNAL
+                </p>
+
+                <h1>
+                    Ceritakan harimu,<br>
+                    <span>simpan momennya.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Tempat kecil untuk menulis cerita, perasaan,
+                    ide, dan momen yang ingin kamu ingat.
+                </p>
+
+                <button class="add-btn" onclick="openModal()">
+                    + Tulis Jurnal
+                </button>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="date-circle">
+                    06
+                    <small>OCT</small>
+                </div>
+
+                <div>
+
+                    <span class="mood">
+                        ☁️ Calm day
+                    </span>
+
+                    <h3>
+                        Today feels different.
+                    </h3>
+
+                    <p>
+                        Sometimes a quiet day is exactly what
+                        we need.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH -->
+        <section class="toolbar">
+
+            <div class="search-box">
+
+                🔍
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari jurnal..."
+                    onkeyup="searchJournal()"
+                >
+
+            </div>
+
+
+            <button
+                class="filter-btn"
+                onclick="showAll()"
+            >
+                Semua
+            </button>
+
+        </section>
+
+
+        <!-- JOURNAL -->
+        <section class="journal-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-title">
+                        YOUR STORIES
+                    </p>
+
+                    <h2>
+                        Jurnal Terbaru
+                    </h2>
+
+                </div>
+
+                <span id="journalCount">
+                    0 entries
+                </span>
+
+            </div>
+
+
+            <!--
+                JURNAL AKAN MUNCUL DI SINI
+                DAN AKAN TERSIMPAN DI LOCAL STORAGE
+            -->
+
+            <div id="journalList">
+            </div>
+
+
+            <div id="emptyMessage" class="empty">
+
+                Tidak ada jurnal yang ditemukan.
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- MODAL TAMBAH JURNAL -->
+
+    <div
+        class="modal"
+        id="journalModal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close"
+                onclick="closeModal()"
+            >
+                ×
+            </button>
+
+
+            <p class="small-title">
+                NEW JOURNAL
+            </p>
+
+
+            <h2>
+                Tulis ceritamu ✍️
+            </h2>
+
+
+            <input
+                type="text"
+                id="journalTitle"
+                placeholder="Judul jurnal"
+            >
+
+
+            <select id="journalMood">
+
+                <option value="😊 Happy">
+                    😊 Happy
+                </option>
+
+                <option value="🌙 Calm">
+                    🌙 Calm
+                </option>
+
+                <option value="✨ Inspired">
+                    ✨ Inspired
+                </option>
+
+                <option value="😔 Sad">
+                    😔 Sad
+                </option>
+
+                <option value="🔥 Excited">
+                    🔥 Excited
+                </option>
+
+            </select>
+
+
+            <textarea
+                id="journalText"
+                placeholder="Ceritakan harimu..."
+            ></textarea>
+
+
+            <button
+                class="save-btn"
+                onclick="addJournal()"
+            >
+                Simpan Jurnal
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer id="about">
+
+        <p>
+            Made with ✦ for your little stories.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
